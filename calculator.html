@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div style="display: inline-block; font-size: 25px">
+      <p style="color: white">Calculator</p>
+      <input
+        type="text"
+        id="result"
+        style="
+          background-color: black;
+          border: none;
+          color: white;
+          font-size: 50px;
+          text-align: left;
+        "
+        readonly
+      />
+      <p>
+        <button
+          onclick="
+            clearResult();
+    "
+        >
+          AC
+        </button>
+        <button>+/-</button>
+        <button>%</button>
+        <button class="button-orange">/</button>
+      </p>
+      <p>
+        <button class="button-gray">7</button>
+        <button class="button-gray">8</button>
+        <button class="button-gray">9</button>
+        <button class="button-star">x</button>
+      </p>
+
+      <p>
+        <button class="button-gray">4</button>
+        <button class="button-gray">5</button>
+        <button class="button-gray">6</button>
+        <button
+          class="button-orange"
+          onclick="
+            ShowResult('+');
+            
+    "
+        >
+          +
+        </button>
+      </p>
+      <p>
+        <button
+          class="button-gray"
+          onclick="
+            ShowResult('3');
+    "
+        >
+          3
+        </button>
+        <button
+          class="button-gray"
+          onclick="
+            ShowResult('2');
+    "
+        >
+          2
+        </button>
+        <button
+          class="button-gray"
+          onclick="
+            ShowResult('1');
+    "
+        >
+          1
+        </button>
+        <button
+          class="button-orange"
+          style="padding-left: 25px; padding-right: 25px"
+        >
+          -
+        </button>
+      </p>
+      <p>
+        <button
+          class="button-gray-0"
+          onclick="
+            ShowResult('0');
+    "
+        >
+          0
+        </button>
+        <button
+          class="button-gray"
+          style="padding-left: 25px; padding-right: 25px"
+          onclick="
+            ShowResult('.');
+    "
+        >
+          .
+        </button>
+        <button
+          class="button-orange"
+          onclick="
+            calculateResult();
+    "
+        >
+          =
+        </button>
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let calculation = "";
+
+    function ShowResult(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function clearResult() {
+      document.getElementById("result").value = "";
+    }
+
+    function calculateResult() {
+      var result = document.getElementById("result").value;
+    }
+  </script>
+</html>
